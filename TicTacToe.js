@@ -9,6 +9,8 @@ import styles from './assets/styles/styles';
 
 
 export default function TicTacToe() {
+  var boardState = ['X', 'O', 'X', 'O', '', 'X', '', '', 'O']; //store state of the board
+
   const { width, height } = useWindowDimensions();
   const isPortrait = height >= width;
 
@@ -24,13 +26,18 @@ export default function TicTacToe() {
 
       <View style={styles.gridContainer}>
         <View style={[styles.grid, { width: gridSize, height: gridSize }]}>
-          {Array.from({ length: 9 }).map((_, i) => (
-            <View key={i} style={styles.cell} />
+          {boardState.map((value, index) => (
+            <View key={index} style={styles.cell}>
+              <Text style={styles.cellText}>{value}</Text>
+            </View>
           ))}
         </View>
       </View>
 
       <View style={styles.footer}>
+        <Text style={styles.playerText}>Alex (X)</Text>
+        <Text style={styles.orientationText}> vs </Text>
+        <Text style={styles.playerText}>Reena (O)</Text>
         <Text style={styles.orientationText}>{isPortrait ? 'Portrait' : 'Landscape'}</Text>
       </View>
     </View>
