@@ -1,4 +1,5 @@
-// TicTacToe.js
+// TicTacToe - This file holds logic to display the TicTacToe board.
+// React imports
 import React from 'react';
 import { View, Text } from 'react-native';
 import { TouchableOpacity, useWindowDimensions } from 'react-native';
@@ -30,7 +31,7 @@ export default function TicTacToe() {
       </View>
 
       <View style={styles.footer}>
-        <Text>{isPortrait ? 'Portrait' : 'Landscape'}</Text>
+        <Text style={styles.orientationText}>{isPortrait ? 'Portrait' : 'Landscape'}</Text>
       </View>
     </View>
   );
