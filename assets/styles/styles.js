@@ -59,6 +59,13 @@ export default StyleSheet.create({
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 1,
   },
+  cellTextBase: {
+  fontWeight: 'bold',
+  color: '#FFFFFF',
+  textShadowColor: 'rgba(0,0,0,0.5)',
+  textShadowOffset: { width: 1, height: 1 },
+  textShadowRadius: 1,
+},
  footer: {
     flex: 1,
     justifyContent: 'center',
