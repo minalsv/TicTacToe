@@ -51,11 +51,29 @@ export default StyleSheet.create({
     shadowRadius: 2,
     elevation: 2,
   },
-  footer: {
+    cellText: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textShadowColor: 'rgba(0,0,0,0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
+  },
+ footer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  footerTop: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+    footerBottom: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   orientationText: {
     fontSize: 16,

@@ -34,12 +34,21 @@ export default function TicTacToe() {
         </View>
       </View>
 
-      <View style={styles.footer}>
+    <View style={styles.footer}>
+    <View style={styles.footerTop}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Text style={styles.playerText}>Alex (X)</Text>
         <Text style={styles.orientationText}> vs </Text>
         <Text style={styles.playerText}>Reena (O)</Text>
-        <Text style={styles.orientationText}>{isPortrait ? 'Portrait' : 'Landscape'}</Text>
-      </View>
+        </View>
+    </View>
+
+    <View style={styles.footerBottom}>
+        <Text style={styles.orientationText}>
+        {isPortrait ? 'Portrait' : 'Landscape'}
+        </Text>
+    </View>
+    </View>
     </View>
   );
 }
