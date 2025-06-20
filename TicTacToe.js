@@ -36,6 +36,7 @@ export default function TicTacToe() {
           setGridContainerHeight(event.nativeEvent.layout.height)
         }
       >
+        {gridContainerHeight > 0 && (
         <View style={[styles.grid, { width: gridSize, height: gridSize }]}>
           {boardState.map((value, index) => (
             <View key={index} style={styles.cell}>
@@ -43,6 +44,7 @@ export default function TicTacToe() {
             </View>
           ))}
         </View>
+        )}
       </View>
 
       <View style={styles.footer}>
