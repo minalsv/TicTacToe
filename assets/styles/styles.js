@@ -40,9 +40,9 @@ export default StyleSheet.create({
   cell: {
     width: '33.33%',
     aspectRatio: 1,
-    borderWidth: 2,
+    borderWidth: 4,
     borderColor: '#4A90E2', // bright blue border
-    backgroundColor: '#2A2A3D', // darker blue-gray cell background
+    backgroundColor: '#6A5ACD', // bright purple
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#000', // subtle 3D shadow

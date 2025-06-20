@@ -15,13 +15,16 @@ export default function TicTacToe() {
   const isPortrait = height >= width;
 
   const [gridContainerHeight, setGridContainerHeight] = useState(0);
+
   const gridSize = Math.min(width * 0.9, gridContainerHeight * 0.95); // 95% of available grid space
-  
   // 10% of the gridsize
-  const dynamicFontSize = gridSize * 0.10;; //(isPortrait ? 32 : 22);
+  const dynamicFontSize = gridSize * 0.10; //(isPortrait ? 32 : 22);
 
   //just for information, in final app remove or comment.
-  console.log('Orientation: ',isPortrait? 'Portrait':'landscape')
+  console.log('gridContainerHeight: ', gridContainerHeight);
+  console.log('width: ', width);
+  console.log('gridSize: ', gridSize);
+  console.log('Orientation: ', isPortrait ? 'Portrait' : 'landscape');
   console.log('Font size:', dynamicFontSize);
 
   return (
@@ -37,13 +40,30 @@ export default function TicTacToe() {
         }
       >
         {gridContainerHeight > 0 && (
-        <View style={[styles.grid, { width: gridSize, height: gridSize }]}>
-          {boardState.map((value, index) => (
-            <View key={index} style={styles.cell}>
-              <Text style={[styles.cellTextBase, { fontSize: dynamicFontSize }]}>{value}</Text>
-            </View>
-          ))}
-        </View>
+          <View style={[styles.grid, { width: gridSize, height: gridSize }]}>
+            {boardState.map((value, index) => {
+              const row = Math.floor(index / 3);
+              const col = index % 3;
+
+              // Keep inner borders only with light blue color
+              const borderStyle = {
+                borderTopWidth: row === 0 ? 0 : 2,
+                borderLeftWidth: col === 0 ? 0 : 2,
+                borderRightWidth: col === 2 ? 0 : 0,
+                borderBottomWidth: row === 2 ? 0 : 0,
+                borderColor: '#4A90E2', // light blue
+                borderWidth: 4,
+              };
+
+              return (
+                <View key={index} style={[styles.cell, borderStyle]}>
+                  <Text style={[styles.cellTextBase, { fontSize: dynamicFontSize }]}>
+                    {value}
+                  </Text>
+                </View>
+              );
+            })}
+          </View>
         )}
       </View>
 
